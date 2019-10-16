@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
     Button button;
     @Override
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button hover_button = (Button) findViewById(R.id.hover);
         Button transition_button = (Button) findViewById(R.id.transition);
+        final Button snackbar_button = (Button) findViewById(R.id.snackbar);
         hover_button.setOnHoverListener(new View.OnHoverListener() {
             //note won't be able to hover with emulator
             @Override
@@ -33,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,
                         "onward!", Toast.LENGTH_LONG).show();
                 startTheNewActivity();
+            }
+        });
+
+        snackbar_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(findViewById(R.id.content), "this is a snackbar", Snackbar.LENGTH_LONG).show();
             }
         });
     }

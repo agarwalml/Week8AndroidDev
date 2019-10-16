@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:id="@+id/content">
 
 
     <Button
@@ -17,5 +18,11 @@
         android:layout_height="200dp"
         android:text="transition"
         android:id="@+id/transition" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="snackbar"
+        android:id="@+id/snackbar" />
 
 </LinearLayout>
