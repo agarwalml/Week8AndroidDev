@@ -16,7 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
-public class SeeActivity extends AppCompatActivity {
+public class See2Activity extends AppCompatActivity {
 
     ArrayList<String> items = new ArrayList<>();
     ArrayAdapter<String> itemsAdapter;
@@ -24,11 +24,11 @@ public class SeeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TextView question = (TextView) findViewById(R.id.question);
-        items.add("Uruguay");
-        items.add("Portugal");
-        items.add("Canada");
-        setContentView(R.layout.activity_adapter);
+        TextView question2 = (TextView) findViewById(R.id.question2);
+        items.add("Alfred Pennyworth");
+        items.add("Damian Wayne");
+        items.add("Barbara Gordon");
+        setContentView(R.layout.activity_adapter2);
         itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
 
         ListView listView = findViewById(R.id.list_view);
@@ -37,23 +37,16 @@ public class SeeActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(id == 2)
+                if(id == 0)
                 {
-                    Toast.makeText(SeeActivity.this, "Correct Answer!", Toast.LENGTH_SHORT).show();
-                    startTheSecondActivity();
-
+                    Toast.makeText(See2Activity.this, "Correct Answer!", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {Snackbar.make(findViewById(R.id.list_view), "This is wrong!", Snackbar.LENGTH_LONG).show();}
                 //Toast.makeText(SeeActivity.this,
-                  //      "wow i am at position : " + id, Toast.LENGTH_LONG).show();
+                //      "wow i am at position : " + id, Toast.LENGTH_LONG).show();
             }
         });
 
-    }
-
-    void startTheSecondActivity(){
-        Intent intent = new Intent(this, com.example.week8.See2Activity.class);
-        startActivity(intent);
     }
 }

@@ -7,10 +7,10 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/question"
+        android:id="@+id/question2"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:text="The beaver is the national emblem of which country?"
+        android:text="What's the name of Batman's Butler?"
         android:textSize="30dp"/>
 
     <ListView
